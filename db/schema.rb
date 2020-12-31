@@ -10,7 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_12_29_161816) do
+ActiveRecord::Schema.define(version: 2020_12_31_175355) do
+
+  create_table "businesses", force: :cascade do |t|
+    t.string "first_name", default: "", null: false
+    t.string "last_name", default: "", null: false
+    t.string "email", default: "", null: false
+    t.string "phone_number", default: "4444444444", null: false
+    t.string "business_name", null: false
+    t.string "business_url"
+    t.string "business_description"
+    t.string "city", null: false
+    t.string "province", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["business_name"], name: "index_businesses_on_business_name", unique: true
+    t.index ["email"], name: "index_businesses_on_email"
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "first_name", default: "", null: false
