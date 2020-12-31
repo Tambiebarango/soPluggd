@@ -5,12 +5,12 @@
     <%= f.label :email %>
     <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
   </div>
-
+  <br/>
   <div class="form-group">
     <%= f.label :password %>
     <%= f.password_field :password, autocomplete: 'current-password', class: 'form-control' %>
   </div>
-
+  <br/>
   <% if devise_mapping.rememberable? %>
     <div class="form-group form-check">
       <%= f.check_box :remember_me, class: 'form-check-input' %>
@@ -19,9 +19,9 @@
       <% end %>
     </div>
   <% end %>
-
+  <br/>
   <div class="form-group">
-    <%= f.submit  t('.sign_in'), class: 'btn btn-primary' %>
+    <%= f.submit  t('.sign_in'), class: 'btn', style: 'background-color:#4e3505; color: white' %>
   </div>
 <% end %>
 
