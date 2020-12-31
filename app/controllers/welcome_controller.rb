@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-class WelcomeController < ActionController::Base
+class WelcomeController < ApplicationController
   def index
     redirect_to 'https://www.soplugged.com/'
   end

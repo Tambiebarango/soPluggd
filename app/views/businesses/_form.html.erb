@@ -1,0 +1,63 @@
+<%= form_with(model: business, local: true) do |f| %>
+  <% if business.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(business.errors.count, "error") %> prohibited this business from being saved:</h2>
+
+      <ul>
+        <% business.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group">
+    <%= f.label :business_name %>
+    <%= f.text_field :business_name, autofocus: true, autocomplete: 'business_name', class: 'form-control' %>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%= f.label :business_url %>
+    <%= f.text_field :business_url, autofocus: true, autocomplete: 'business_url', class: 'form-control' %>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%= f.label :business_description %>
+    <%= f.text_field :business_description, autofocus: true, autocomplete: 'business_description', class: 'form-control' %>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%= f.label :owner_first_name %>
+    <%= f.text_field :first_name, autofocus: true, autocomplete: 'first_name', class: 'form-control' %>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%= f.label :owner_last_name %>
+    <%= f.text_field :last_name, autofocus: true, autocomplete: 'last_name', class: 'form-control' %>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%= f.label :owner_email %>
+    <%= f.email_field :email, autofocus: true, autocomplete: 'email', class: 'form-control' %>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%= f.label :phone_number %>
+    <%= f.text_field :phone_number, autofocus: true, autocomplete: 'phone_number', class: 'form-control' %>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%= f.label :city %>
+    <%= f.text_field :city, class: 'form-control' %>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%= f.label :province %>
+    <%= f.text_field :province, class: 'form-control' %>
+  </div>
+  <br/>
+  <div class="form-group">
+    <%= f.submit  "Register", class: 'btn', style: 'background-color:#4e3505; color: white' %>
+  </div>
+  <br/>
+<% end %>
